@@ -43,7 +43,7 @@ return require('packer').startup(function(use)
     use 'jiangmiao/auto-pairs'
 
     use 'tpope/vim-fugitive'
-	
+
 	use { 'nvim-lualine/lualine.nvim',
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
 	}
