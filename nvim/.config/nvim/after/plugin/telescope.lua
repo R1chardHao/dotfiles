@@ -1,3 +1,9 @@
+require('telescope').setup{
+    defaults = {
+        path_display = 'truncate'
+    }
+}
+
 function vim.getVisualSelection()
 	vim.cmd('noau normal! "vy"')
 	local text = vim.fn.getreg('v')
@@ -20,3 +26,11 @@ vim.keymap.set('n', '<leader>fs', builtin.grep_string, {})
 vim.keymap.set('v', '<leader>fs', function() builtin.grep_string({ search=vim.getVisualSelection() }) end, {})
 vim.keymap.set('n', '<leader>bl', builtin.buffers, {})
 vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols, {})
+vim.keymap.set('n', 'gr', function ()
+    builtin.lsp_references({
+        layout_strategy = 'vertical',
+        layout_config = {width = 0.8},
+        show_line = false
+    })
+end, {})

@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-	use 'joshdick/onedark.vim'
+    use 'navarasu/onedark.nvim'
 
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
@@ -43,6 +43,7 @@ return require('packer').startup(function(use)
     use 'jiangmiao/auto-pairs'
 
     use 'tpope/vim-fugitive'
+    use 'sindrets/diffview.nvim'
 
 	use { 'nvim-lualine/lualine.nvim',
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}

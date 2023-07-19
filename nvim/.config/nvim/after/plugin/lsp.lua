@@ -1,12 +1,13 @@
 ----------------
 -- lsp-zero
 ----------------
-local lsp = require('lsp-zero')
-
-lsp.preset('recommended')
+local lsp = require('lsp-zero').preset({})
 
 lsp.on_attach(function(client, bufnr)
-  lsp.default_keymaps({buffer = bufnr})
+  lsp.default_keymaps({
+      buffer = bufnr,
+      omit = {'gr'}
+  })
 end)
 
 -- (Optional) Configure lua language server for neovim
