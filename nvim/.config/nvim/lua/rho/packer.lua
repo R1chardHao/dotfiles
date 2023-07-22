@@ -63,4 +63,8 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
+
+    use {'echasnovski/mini.surround', config = function() require('mini.surround').setup() end}
+
+    use 'RRethy/vim-illuminate'
 end)
