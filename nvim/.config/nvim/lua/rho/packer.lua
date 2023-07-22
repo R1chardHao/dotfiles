@@ -35,7 +35,7 @@ return require('packer').startup(function(use)
 			{'hrsh7th/cmp-nvim-lua'},
 
 			-- Snippets
-			{'L3MON4D3/LuaSnip'},
+			{'L3MON4D3/LuaSnip', tag = 'v2.*'},
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
@@ -55,5 +55,12 @@ return require('packer').startup(function(use)
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
         },
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
     }
 end)
