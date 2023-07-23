@@ -24,6 +24,17 @@ local cmp = require('cmp')
 local cmp_mappings = {
     ['<C-Space>'] = cmp.mapping.complete(),
 
+    ['<C-j>'] = cmp.mapping(function()
+        -- Show comlete menu for luasnip only
+        cmp.complete({
+            config = {
+                sources = {
+                    {name = 'luasnip'}
+                }
+            }
+        })
+    end, {"i"}),
+
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
 
     ["<Tab>"] = cmp.mapping(function(fallback)
@@ -53,8 +64,6 @@ local cmp_mappings = {
     end, { "i", "s" }),
 }
 
-require('luasnip.loaders.from_vscode').lazy_load()
-
 cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
@@ -74,6 +83,8 @@ cmp.setup({
         completeopt = 'menu,menuone,noinsert'
     },
 })
+
+require('luasnip.loaders.from_vscode').lazy_load()
 
 cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline({
