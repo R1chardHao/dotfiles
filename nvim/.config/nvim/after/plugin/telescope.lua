@@ -1,6 +1,11 @@
 require('telescope').setup{
     defaults = {
-        path_display = 'truncate'
+        path_display = { truncate = 3 },
+        layout_config = {
+            vertical = {
+                preview_cutoff = 0,
+            },
+        },
     }
 }
 

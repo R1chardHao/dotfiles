@@ -8,7 +8,7 @@ vim.keymap.set("n", "<c-u>", "<c-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 -- Copy and paste
-vim.keymap.set("v", "p", "\"_dp")
+vim.keymap.set("v", "p", "\"_dP")
 vim.keymap.set("n", "<leader>p", "\"+p")
 vim.keymap.set("v", "<leader>p", "\"+p")
 vim.keymap.set("n", "<leader>y", "\"+y")
