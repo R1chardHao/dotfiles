@@ -1,0 +1,30 @@
+""" Map leader to space ---------------------
+let mapleader=" "
+
+" General settings
+set nu rnu
+set ignorecase smartcase
+
+
+""" key mapping
+nnoremap <c-e> 3<c-e>
+nnoremap <c-y> 3<c-y>
+
+nnoremap <leader>yy "+yy
+vnoremap <leader>y "+y
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>P "+P
+nnoremap <leader>dd "+dd
+
+nnoremap <leader>ff :vsc Edit.GoToFile<CR>
+nnoremap <leader>fn :vsc Edit.GoToType<CR>
+nnoremap <leader>r :vsc Refactor.Rename<CR>
+
+nnoremap <c-_> :vsc Edit.ToggleLineComment<CR>
+vnoremap <c-_> :vsc Edit.ToggleLineComment<CR>
+nnoremap <c-o> :vsc View.NavigateBackward<CR>
+nnoremap <c-i> :vsc View.NavigateForward<CR>
+
+nnoremap gp `[v`]
