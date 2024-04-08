@@ -70,7 +70,7 @@ ZSH_THEME="avit"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zoxide zsh-autosuggestions)
+plugins=(git zoxide zsh-autosuggestions fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,3 +113,12 @@ if [ -d "$HOME/.cargo/bin" ] ; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+# bun
+if [ -d "$HOME/.bun" ] ; then
+    [ -s "/home/richard/.bun/_bun" ] && source "/home/richard/.bun/_bun"
+    export BUN_INSTALL="$HOME/.bun"
+    export PATH="$BUN_INSTALL/bin:$PATH"
+fi
+
+# fzf
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
